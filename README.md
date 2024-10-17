@@ -24,6 +24,8 @@ Refer to the provided [Makefile](./Makefile) and ensure that you have all the re
 
 > make
 
+Like any regular piece of C code that comes with a makefile :-)
+
 ## Using the DM server
 
 ### Start a tmux session
@@ -31,6 +33,7 @@ Refer to the provided [Makefile](./Makefile) and ensure that you have all the re
 Although not mandatory, the program is intended to be launched within the context of a tmux session to enable interactions with other programs. Use the following command, to start a tmux session with a window labeled "dm_server". With that tmux session started, launch the freshly compiled **asgard_dm_server** executable. At this point you should be good to go.
 
 > tmux new -s dm_server
+> 
 > ./asgard_dm_server
 
 which will open a prompt. The program offers a rudimentary command line environment (ncurses) that understands a small number of commands. The interface is not very sophisticated because this server runs in the background and does most things without requiring frequent input from the user. Most of the action happens at the shared memory data structure level: the user modifies a channel, the server automatically updates the combined command, converts it into a command for the driver and sends this command to the PCI board connected to the driver.
@@ -40,6 +43,7 @@ which will open a prompt. The program offers a rudimentary command line environm
 In the early stages of design/operation, since we're not quite sure of how many virtual mirrors we'd like to work with, the DM server requires at least one command to be set at the prompt (by a user actually looking at the prompt or a program that uses tmux to pipe commands directly to **dm_server** named tmux shell.
 
 > set_nch 8
+> 
 > start
 
 The first of these commands sets the number of channels (virtual DMs) to set up. By default, the code will start 4... but who knows how crazy are going to be. In this example, we set the number of channels to 8 (obviously).
@@ -51,6 +55,7 @@ Now that the channels have been requested (and the shared memory allocated, whic
 To quit the execution of the program in a clean manner, back to the prompt:
 
 > stop
+>
 > quit
 
 - The **stop** command interrupts the thread that was monitoring the different channels.
@@ -64,16 +69,16 @@ If you ever need to change the number of virtual DM channels, you first need to 
 
 The commands made available allow for configuration / reconfiguration of the server.
 
-|---------+----------------------------------------------------------|
+|---------|----------------------------------------------------------|
 | command | description                                              |
-|---------+----------------------------------------------------------|
+|---------|----------------------------------------------------------|
 | help    | prints the help menu                                     |
 | set_nch | sets/updates the number of channels used by the server   |
 | get_nch | prints the number of channels used by the server         |
 | start   | triggers the channel monitoring process                  |
 | reset   | resets one or all channels                               |
 | quit    | closes the shm data structures and shuts the driver down |
-|---------+----------------------------------------------------------|
+|---------|----------------------------------------------------------|
 
 ## Conclusion
 
