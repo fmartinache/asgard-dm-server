@@ -69,16 +69,16 @@ If you ever need to change the number of virtual DM channels, you first need to 
 
 The commands made available allow for configuration / reconfiguration of the server.
 
-|---------|----------------------------------------------------------|
-| command | description                                              |
-|---------|----------------------------------------------------------|
-| help    | prints the help menu                                     |
-| set_nch | sets/updates the number of channels used by the server   |
-| get_nch | prints the number of channels used by the server         |
-| start   | triggers the channel monitoring process                  |
-| reset   | resets one or all channels                               |
-| quit    | closes the shm data structures and shuts the driver down |
-|---------|----------------------------------------------------------|
+
+| command | description                                              | parameter |
+|---------|----------------------------------------------------------|-----------|
+| help    | prints the help menu                                     | N.A       |
+| set_nch | sets/updates the number of channels used by the server   | integer   |
+| get_nch | prints the number of channels used by the server         | N.A.      |
+| start   | triggers the channel monitoring process                  | N.A.      |
+| reset   | resets one or all channels                               | integer   |
+| quit    | closes the shm data structures and shuts the driver down | N.A.      |
+
 
 ## Conclusion
 
