@@ -1,6 +1,14 @@
 # asgard-dm-server
 My working version of the "classical" shared memory driven control of deformable mirror(s) for ASGARD
 
+## Note
+
+There are two versions of the code in this directory:
+- asgard_DM_server.c: the single DM implementation (for reference)
+- asgard_MDM_server.c: the multiplt DM implementation (the one to use)
+
+I'm a little rusty with with semaphores, so I'm not fully taking advantage of the features of the library... but it seems that implemented as it is, the code can monitor and control four DMs at the ~3.5 kHz rate, which is the best that we'll ever be able to operate all this stuff here.
+
 ## The ASGARD project and its DMs
 
 ASGARD is the name of a suite of instruments that was officially accepted for installation at the VLTI by ESO in 2023. ASGARD is a suite of instruments consisting of 4 distinct modules:

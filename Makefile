@@ -1,10 +1,10 @@
 CC=gcc
 
-CFLAGS  = -W -Wall
+CFLAGS  = -W -Wall -ggdb
 LDFLAGS = -lpthread -lm -lncurses
 EXEC    = asgard_DM_server
 LIB     = testlib.so
-OBJECTS = asgard_DM_server.o ImageStreamIO.o
+OBJECTS = asgard_MDM_server.o ImageStreamIO.o
 
 # adding the BMC specific things as they are setup on this machine
 
