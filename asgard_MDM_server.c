@@ -63,7 +63,7 @@ BMCRC rv;    // result of every interaction with the driver (check status)
 uint32_t *map_lut[4];  // the DM actuator mappings
 
 int simmode = 0;  // flag to set to "1" to not attempt to connect to the driver
-int timelog = 1;  // flag to set to "1" to log DM response timing
+int timelog = 0;  // flag to set to "1" to log DM response timing
 
 // order to be reshuffled when reassembling the instrument
 const char snumbers[4][BMC_SERIAL_NUMBER_LEN+1] = \
