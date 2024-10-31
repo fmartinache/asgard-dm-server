@@ -67,7 +67,7 @@ int timelog = 0;  // flag to set to "1" to log DM response timing
 
 // order to be reshuffled when reassembling the instrument
 const char snumbers[4][BMC_SERIAL_NUMBER_LEN+1] = \
-  {"17DW019#113", "17DW019#093", "17DW019#122", "17DW019#053"};
+  {"17DW019#113", "17DW019#053", "17DW019#093", "17DW019#122"};
 
 /* =========================================================================
  *                       function prototypes
